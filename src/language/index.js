@@ -3,6 +3,7 @@ import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
+// 默认语言中文，会被浏览器语言设置覆盖
 const DEFAULT_LANG = 'zh'
 const LOCALE_KEY = 'localeLanguage'
 
@@ -18,6 +19,7 @@ const i18n = new VueI18n({
 
 export const setup = lang => {
   if (lang === undefined) {
+    // 读取浏览器语言设置
     lang = window.localStorage.getItem(LOCALE_KEY)
     if (locales[lang] === undefined) {
       lang = DEFAULT_LANG

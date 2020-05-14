@@ -2,31 +2,15 @@
   <div id="app1">
     <!--    <img alt="Vue logo" src="./assets/logo.png">-->
     <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <keep-alive>
-      <b-b-s-nav-bar/>
-    </keep-alive>
-    <keep-alive>
-      <BbsFooter/>
-    </keep-alive>
+    <router-view></router-view>
     <!--    <login></login>-->
   </div>
 </template>
 
 <script>
-  //import HelloWorld from './components/HelloWorld.vue'
-  import BBSNavBar from './components/header/NavBar'
-  import BbsFooter from './components/footer/footer'
-  // import login from './views/login/login'
 
   export default {
-    name: 'App',
-    components: {
-      BBSNavBar,
-      //HelloWorld,
-      // NavBar,
-      BbsFooter
-      //login
-    }
+    name: 'App'
   }
 </script>
 

@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
-
+// 全局注册
 export default () => {
   const requireComponent = require.context(
     // 其组件目录的相对路径
-    './components',
+    '@/components',
     // 是否查询其子目录
     false,
     // 匹配基础组件文件名的正则表达式

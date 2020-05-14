@@ -9,17 +9,19 @@ const userInfo = {
     .toString('base64')
 };
 const service = axios.create({
-  baseURL: "https://127.0.0.1/v1/",
+  baseURL: "http://127.0.0.1/v1/",
   timeout: 5000,
   auth: userInfo,
-  timeoutErrorMessage: '网络连接貌似出了点问题，请检查网络',
+  timeoutErrorMessage: this.$t('timeoutErrorMessage'),
   proxy: null,
 });
+// 接口数组
 const INF = [
   'auth',
   'postTitle',
   'postDetail',
-  'userDetail'
+  'userDetail',
+  'newPost'
 ];
 
 async function auth() {
@@ -39,6 +41,12 @@ async function auth() {
   })
 }
 
+/**
+ * 分页获取帖子
+ * @param start
+ * @param end
+ * @return {Promise<unknown>}
+ */
 async function postTitle(start, end) {
   return await new Promise((resolve, reject) => {
     service.get(INF[1],
@@ -55,6 +63,11 @@ async function postTitle(start, end) {
   })
 }
 
+/**
+ * 获取帖子详情
+ * @param postID
+ * @return JSON 帖子详情
+ */
 async function postDetail(postID) {
   return await new Promise((resolve, reject) => {
     service.get(INF[2], {
@@ -69,6 +82,10 @@ async function postDetail(postID) {
   })
 }
 
+/**
+ * 获取用户详细信息
+ * @return JSON
+ */
 async function userDetail() {
   return await new Promise((resolve, reject) => {
     service.get(INF[3])
@@ -86,9 +103,32 @@ async function userDetail() {
   })
 }
 
+/**
+ * 发帖
+ * @param postDetail
+ * @return JSON
+ */
+async function newPost(postDetail) {
+  return await new Promise((resolve, reject) => {
+    service.post(INF[4], postDetail)
+      .then(function (response) {
+        try {
+          let tmp = JSON.parse(response);
+          return resolve(tmp);
+        } catch (e) {
+          return reject(response)
+        }
+      })
+      .catch(e => {
+        return reject(e);
+      })
+  })
+}
+
 export default {
   auth,
   postTitle,
   postDetail,
-  userDetail
+  userDetail,
+  newPost
 }

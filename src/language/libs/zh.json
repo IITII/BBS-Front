@@ -7,5 +7,10 @@
   "UserName": "用户名",
   "password": "密码",
   "forget_password": "忘记密码",
-  "submit": "提交"
+  "submit": "提交",
+  "timeoutErrorMessage": "网络连接貌似出了点问题，请检查网络",
+  "denyEmptyContent": "不得为空",
+  "title": "标题",
+  "content": "正文",
+  "cancel": "取消"
 }

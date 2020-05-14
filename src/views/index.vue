@@ -1,5 +1,6 @@
 <template>
-  <bbs-nav-bar>
+  <div>
+    <bbs-nav-bar></bbs-nav-bar>
     <alert :error="error" :error-info="errorInfo"></alert>
     <b-table :busy="busy"
              bordered="true"
@@ -17,7 +18,8 @@
       aria-controls="post"
       class="index"
     ></b-pagination>
-    <bbs-footer>
+    <bbs-footer></bbs-footer>
+  </div>
 </template>
 
 <script>
