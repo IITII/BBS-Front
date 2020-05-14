@@ -30,7 +30,7 @@ const routes = [{
     },
     // 查看帖子详情
     {
-      path: '/post/:post-id',
+      path: '/post/:post_id',
       component: () => import('../views/post/post')
     },
     // 用户个人信息
