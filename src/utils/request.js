@@ -3,9 +3,9 @@ import axios from 'axios';
 import Vue from 'vue';
 
 const userInfo = {
-  username: new Buffer(Vue.$store.getters.getUserInfo.username)
+  username: new Buffer(Vue.store.getters.getUserInfo.username)
     .toString('base64'),
-  password: new Buffer(Vue.$store.getters.getUserInfo.password)
+  password: new Buffer(Vue.store.getters.getUserInfo.password)
     .toString('base64')
 };
 const service = axios.create({
@@ -21,7 +21,8 @@ const INF = [
   'postTitle',
   'postDetail',
   'userDetail',
-  'newPost'
+  'newPost',
+  'logout'
 ];
 
 async function auth() {
@@ -125,10 +126,26 @@ async function newPost(postDetail) {
   })
 }
 
+/**
+ * 注销
+ */
+async function logout() {
+  return await new Promise((resolve, reject) => {
+    service.get(INF[5])
+      .then(response => {
+        return resolve(response);
+      })
+      .catch(e =>{
+        return reject(e);
+      })
+  })
+}
+
 export default {
   auth,
   postTitle,
   postDetail,
   userDetail,
-  newPost
+  newPost,
+  logout
 }

@@ -32,7 +32,7 @@
 </template>
 
 <script>
-
+  import request from '../../utils/request';
   export default {
     name: 'BbsNavBar',
     data: function () {
@@ -45,11 +45,11 @@
             text: this.$i18n.t('home'),
           },
           {
-            path: '/newPost',
+            path: '/new-post',
             text: this.$i18n.t('newPost'),
           },
           {
-            path: '/userInfo',
+            path: '/me',
             text: this.$i18n.t('userInfo'),
           }
         ]
@@ -71,7 +71,7 @@
         this.itemActive = index;
       },
       logout: function () {
-        console.log("logout")
+        request.logout()
       }
     }
   }

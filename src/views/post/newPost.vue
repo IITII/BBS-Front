@@ -1,5 +1,6 @@
 <template>
   <div>
+    <bbs-nav-bar></bbs-nav-bar>
     <alert :error="errorCt.error" :error-info="errorCt.errorInfo"></alert>
     <success :success="postState.success" :info="postState.info"></success>
     <div class="new-post">
@@ -35,6 +36,7 @@
         </b-form-group>
       </b-container>
     </div>
+    <bbs-footer></bbs-footer>
   </div>
 </template>
 
@@ -43,10 +45,12 @@
   import Alert from '@/components/alert';
   import request from '@/utils/request';
   import Success from '@/components/success';
+  import BbsNavBar from '../../components/header/NavBar';
+  import BbsFooter from '../../components/footer/footer';
 
   export default {
     name: "newPost",
-    components: {Success, Alert},
+    components: {BbsFooter, BbsNavBar, Success, Alert},
     data: function () {
       return {
         postDetail: {
