@@ -9,7 +9,7 @@
              :items="post.postTitle"
              head-variant="none"
              table-variant="none"
-             class="index">
+             class="index text-center">
     </b-table>
     <b-pagination
       v-model="currentPage"

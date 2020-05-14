@@ -1,6 +1,7 @@
 <template>
 <div>
   post
+  {{ $route.params.post_id }}
 </div>
 </template>
 
