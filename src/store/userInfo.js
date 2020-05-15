@@ -34,7 +34,7 @@ const store = new Vuex.Store({
   },
   getters: {
     getUserInfo: state => {
-      return this.state
+      return state
     }
   },
   computed: mapState([

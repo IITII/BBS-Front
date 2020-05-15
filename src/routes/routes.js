@@ -32,15 +32,15 @@ const routes = [{
     {
       path: '/post/:post_id',
       component: () => import('../views/post/post'),
-      children: [
-        {
-          path: 'replyPost',
-          component: () => import('../views/post/replyPost'),
-          meta: {
-            keepAlive: true
-          }
-        }
-      ]
+      // children: [
+      //   {
+      //     path: '',
+      //     component: () => import('../views/post/comment/replyPost'),
+      //     meta: {
+      //       keepAlive: true
+      //     }
+      //   }
+      // ]
     },
     // 用户个人信息
     {
