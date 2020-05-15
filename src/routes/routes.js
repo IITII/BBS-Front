@@ -62,6 +62,10 @@ const routes = [{
         {
           path: 'com_mag',
           component: () => import('../views/user/children/commentMag')
+        },
+        {
+          path: 'my_fav',
+          component: ()=>import('../views/user/children/myFavorites')
         }
       ]
     },

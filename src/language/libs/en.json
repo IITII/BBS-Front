@@ -1,6 +1,22 @@
 {
   "home": "Home",
-  "userInfo": "Myself",
-  "newPost": "New Post",
-  "logout": "Logout"
+  "userInfo": "Me",
+  "newPost": "NewPost",
+  "logout": "Logout",
+  "UserName": "UserName",
+  "password": "Password",
+  "forget_password": "Forget...?",
+  "submit": "submit",
+  "timeoutErrorMessage": "Timeout error, please check your network.",
+  "denyEmptyContent": "This content can not be blank.",
+  "title": "Title",
+  "content": "Content",
+  "cancel": "Cancel",
+  "denyEmptyComment": "Comment cannot be empty.",
+  "liked": "Follower",
+  "collected": "Favorites posts",
+  "fans": "Fans",
+  "myPost": "My posts",
+  "commentManager": "Comments Manage",
+  "404": "Page not found..."
 }

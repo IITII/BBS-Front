@@ -20,7 +20,9 @@
         class="index"
       ></b-pagination>
     </div>
-    <bbs-footer></bbs-footer>
+    <div class="text-center">
+      <bbs-footer></bbs-footer>
+    </div>
   </div>
 </template>
 

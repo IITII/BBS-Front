@@ -1,6 +1,6 @@
 <template>
   <div class="bbs-footer">
-    <hr class="w-100  d-md-none"/>
+    <hr/>
     <footer class="bd-footer text-muted">
       <div style="display: inline-block">
         <a target="_blank"

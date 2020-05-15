@@ -9,7 +9,7 @@
         <!--        <b-avatar rounded=""-->
         <!--                  :src="require('../../assets/images/water-glass-64.png')">-->
         <!--        </b-avatar>-->
-        <b-nav-item :href="navList[0].path">BBS</b-nav-item>
+        <b-nav-item :href="navList[0].path">BBS论坛</b-nav-item>
         <b-nav-item
           v-for="(item,index) in navList"
           id="nav-items"
@@ -28,6 +28,7 @@
         </b-button>
       </b-nav>
     </div>
+    <hr>
   </div>
 </template>
 
