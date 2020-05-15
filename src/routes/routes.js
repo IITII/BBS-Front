@@ -31,7 +31,16 @@ const routes = [{
     // 查看帖子详情
     {
       path: '/post/:post_id',
-      component: () => import('../views/post/post')
+      component: () => import('../views/post/post'),
+      children: [
+        {
+          path: '/post/:post_id/replyPost',
+          component: () => import('../views/post/replyPost'),
+          meta: {
+            keepAlive: true
+          }
+        }
+      ]
     },
     // 用户个人信息
     {
