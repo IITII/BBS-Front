@@ -34,7 +34,7 @@ const routes = [{
       component: () => import('../views/post/post'),
       children: [
         {
-          path: '/post/:post_id/replyPost',
+          path: 'replyPost',
           component: () => import('../views/post/replyPost'),
           meta: {
             keepAlive: true

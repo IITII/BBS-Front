@@ -1,41 +1,27 @@
 import router from './routes/routes'
 import store from './store/userInfo'
+import _ from 'lodash'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 
-NProgress.configure({ showSpinner: false }) // NProgress Configuration
+NProgress.configure({showSpinner: false}) // NProgress Configuration
 
 const whiteList = ['/login'] // no redirect whitelist
 
-router.beforeEach(async(to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   // start progress bar
   NProgress.start()
 
-  // determine whether the user has logged in
-  const hasToken = getToken()
+  const userInfo = store.getters.getUserInfo;
 
-  if (hasToken) {
+  if (_.isNil(userInfo.username) || _.isNil(userInfo.password) ) {
     if (to.path === '/login') {
       // if is logged in, redirect to the home page
-      next({ path: '/' })
+      next({path: '/'})
       NProgress.done()
     } else {
-      const hasGetUserInfo = store.getters.name
-      if (hasGetUserInfo) {
-        next()
-      } else {
-        try {
-          // get user info
-          await store.dispatch('user/getInfo')
-
-          next()
-        } catch (error) {
-          // remove token and go to login page to re-login
-          await store.dispatch('user/resetToken')
-          next(`/login?redirect=${to.path}`)
-          NProgress.done()
-        }
-      }
+      next(`/login?redirect=${to.path}`);
+      NProgress.done();
     }
   } else {
     /* has no token*/
