@@ -12,5 +12,12 @@
   "denyEmptyContent": "不得为空",
   "title": "标题",
   "content": "正文",
-  "cancel": "取消"
+  "cancel": "取消",
+  "denyEmptyComment": "评论不得为空",
+  "liked": "关注的人",
+  "collected": "收藏的帖子",
+  "fans": "粉丝",
+  "myPost": "我的帖子",
+  "commentManager": "评论管理",
+  "404": "233 页面找不到了呢~~"
 }

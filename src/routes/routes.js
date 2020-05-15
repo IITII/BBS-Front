@@ -45,7 +45,25 @@ const routes = [{
     // 用户个人信息
     {
       path: '/me',
-      component: () => import('../views/user/user')
+      component: () => import('../views/user/user'),
+      children: [
+        {
+          path: 'like',
+          component: () => import('../views/user/children/liked')
+        },
+        {
+          path: 'fans',
+          component: () => import('../views/user/children/fans')
+        },
+        {
+          path: 'my_post',
+          component: () => import('../views/user/children/my_post')
+        },
+        {
+          path: 'com_mag',
+          component: () => import('../views/user/children/commentMag')
+        }
+      ]
     },
     //404
     {
@@ -57,7 +75,7 @@ const routes = [{
 const routerFactory = () => new Router({
   // mode: 'history', // require service support
   // 滚动行为，详见 https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html#%E6%BB%9A%E5%8A%A8%E8%A1%8C%E4%B8%BA
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({y: 0}),
   routes: routes
 })
 const router = routerFactory();
@@ -67,4 +85,5 @@ export function resetRouter() {
   const newRouter = routerFactory();
   router.matcher = newRouter.matcher; // reset router
 }
+
 export default router;

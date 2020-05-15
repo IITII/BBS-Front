@@ -1,6 +1,7 @@
 'use strict';
 import axios from 'axios';
 import store from '../store/userInfo'
+import i18n from '../language';
 
 const userInfo = {
   username: new Buffer(store.getters.getUserInfo.username)
@@ -12,7 +13,7 @@ const service = axios.create({
   baseURL: "http://127.0.0.1/v1/",
   timeout: 5000,
   auth: userInfo,
-  timeoutErrorMessage: this.$t('timeoutErrorMessage'),
+  timeoutErrorMessage: i18n.t('timeoutErrorMessage'),
   proxy: null,
 });
 // 接口数组

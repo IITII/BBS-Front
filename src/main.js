@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // 权限控制
-//import '@/permission'
+// import '@/premission'
 
 Vue.config.productionTip = false
 
