@@ -1,11 +1,11 @@
 'use strict';
 import axios from 'axios';
-import Vue from 'vue';
+import store from '../store/userInfo'
 
 const userInfo = {
-  username: new Buffer(Vue.store.getters.getUserInfo.username)
+  username: new Buffer(store.getters.getUserInfo.username)
     .toString('base64'),
-  password: new Buffer(Vue.store.getters.getUserInfo.password)
+  password: new Buffer(store.getters.getUserInfo.password)
     .toString('base64')
 };
 const service = axios.create({

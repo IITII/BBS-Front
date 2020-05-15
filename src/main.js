@@ -14,6 +14,9 @@ import {BootstrapVue, BootstrapVueIcons, IconsPlugin} from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+// 权限控制
+//import '@/permission'
+
 Vue.config.productionTip = false
 
 //全局注册基本组件
